@@ -22,7 +22,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
-
+      - name: use node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.19.1
+      - name: npm i && build
+        run: |
+          npm i
+          npm run build
+        env:
+          CI: true
       - name: SCP Files
       # You may pin to the exact commit or the version.
       # uses: appleboy/scp-action@b476d5806f2a4c1ed5902a87fa91b0623cac7258
