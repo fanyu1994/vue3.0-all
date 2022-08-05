@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { routerList } from '@/route/index'
+import { routerList } from '../../route/index'
 import { useRouter } from 'vue-router'
-import { useRouterStore } from '@/store/index'
+import { useRouterStore } from '../../store/index'
 import { onMounted, ref, watch } from 'vue'
 
 const Router = useRouter()

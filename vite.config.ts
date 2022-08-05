@@ -57,7 +57,47 @@ export default defineConfig(async ({ command, mode }) => {
   } else {
     // build 独有配置
     config = {
-      plugins: [vue()],
+      resolve: {
+        alias: {
+          '@': resolve(__dirname, './src'),
+          api: resolve(__dirname, './src/api'),
+        },
+      },
+      plugins: [
+        vue(),
+        Unocss({
+          presets: [presetUno(), presetAttributify(), presetIcons()],
+          rules: [['fit-content', { width: 'fit-content' }]],
+          shortcuts: [
+            // you could still have object style
+            {
+              btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+            },
+            // dynamic shortcuts
+            [
+              /^btn-(.*)$/,
+              ([, c]) => `bg-${c}-400 text-${c}-100 py-2 px-4 rounded-lg`,
+            ],
+          ],
+        }),
+        AutoImport({
+          imports: ['vitest'],
+          dts: true, // generate TypeScript declaration
+        }),
+        Components({
+          dts: true,
+        }),
+      ],
+      server: {
+        cors: true, // 默认启用并允许任何源
+        proxy: {
+          '^/api': {
+            target: 'http://127.0.0.1:3456/',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ''),
+          },
+        },
+      },
     }
   }
   return config

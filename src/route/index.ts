@@ -1,17 +1,7 @@
 import { createRouter, createWebHistory, RouterOptions } from 'vue-router'
-import { getData } from 'api/index'
-import { titleCase } from '@/utils/index'
-import { useRouterStore } from '@/store/index'
+import { titleCase } from '../utils/index'
 
 // const routerStore = useRouterStore()
-getData()
-  .then((res) => {
-    // console.log(res, '理论上这里是返回的路由信息')
-  })
-  .catch((err) => {
-    // console.log(err, '理论上这里是返回的错误信息')
-  })
-
 let routerList: routeInfo[] = [
   {
     path: '/',

@@ -2,8 +2,6 @@
   <div id="anmation-page">Animation</div>
 </template>
 
-<script></script>
-
 <style lang="less" scoped>
 #anmation-page {
   width: 100%;

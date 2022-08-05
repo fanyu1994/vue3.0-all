@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { effect, onBeforeUnmount, ref } from 'vue'
-import { getIP } from '@/api/index'
+import { getIP } from '../../api/index'
 
 const emits = defineEmits(['change', 'delete'])
 

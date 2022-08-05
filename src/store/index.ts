@@ -7,7 +7,7 @@ export const useRouterStore = defineStore('routerStore', {
         {
           path: '/',
           name: 'home',
-          component: () => import('@/views/Home.vue'),
+          component: () => import('@/page/home/index.vue'),
           meta: {
             active: true,
             keepAlive: true,
