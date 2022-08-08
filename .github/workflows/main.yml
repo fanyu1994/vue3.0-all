@@ -49,9 +49,13 @@ jobs:
       - name: Build the Docker image
         run: |
           docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-hangzhou.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
+          
           docker build -t vue3.0-all:latest . 
 
           docker tag vue3.0-all registry.cn-hangzhou.aliyuncs.com/fanyu/vue3.0-all:latest
+
+          docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-hangzhou.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
+
           docker push registry.cn-hangzhou.aliyuncs.com/fanyu/vue3.0-all:latest
       - uses: appleboy/ssh-action@master
         with:
