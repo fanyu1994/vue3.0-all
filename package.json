@@ -16,6 +16,7 @@
     "jsdom": "^20.0.0",
     "node-fetch": "^3.2.10",
     "pinia": "^2.0.17",
+    "rollup-plugin-copy": "^3.4.0",
     "unocss": "^0.44.7",
     "vue": "^3.2.37",
     "vue-router": "4"

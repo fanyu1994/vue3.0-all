@@ -6,6 +6,9 @@ import { presetAttributify, presetUno } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import copy from 'rollup-plugin-copy'
+import myExample from './rollup-plugin-local.js'
+
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
   let config = {}
@@ -88,14 +91,32 @@ export default defineConfig(async ({ command, mode }) => {
           dts: true,
         }),
       ],
-      server: {
-        cors: true, // 默认启用并允许任何源
-        proxy: {
-          '^/api': {
-            target: 'http://127.0.0.1:3456/',
-            changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, ''),
+      build: {
+        rollupOptions: {
+          output: {
+            chunkFileNames: 'static/js/[name]-[hash].js',
+            entryFileNames: 'static/js/[name]-[hash].js',
+            assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
           },
+          // plugins: [
+          //   copy({
+          //     targets: [
+          //       {
+          //         src: [
+          //           resolve(__dirname, './dockerBootstrap.sh'),
+          //           resolve(__dirname, '/docker-compose.yml'),
+          //           resolve(__dirname, '/nginx.conf'),
+          //           resolve(__dirname, '/Dockerfile'),
+          //         ],
+          //         dest: 'dist/',
+          //       },
+          //       {
+          //         src: './dockerBootstrap.sh',
+          //         dest: 'dist/static/',
+          //       },
+          //     ],
+          //   }),
+          // ],
         },
       },
     }
