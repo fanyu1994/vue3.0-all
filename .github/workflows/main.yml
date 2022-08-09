@@ -50,7 +50,7 @@ jobs:
         run: |
           docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-hangzhou.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
 
-          docker build -t vue3.0-all:latest . 
+          docker build -t vue3.0-all:latest ./public 
 
           docker tag vue3.0-all:latest registry.cn-hangzhou.aliyuncs.com/fanyu1994/vue3.0-all:latest
 
