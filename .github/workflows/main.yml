@@ -61,4 +61,4 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: 'root'
           key: ${{ secrets.SERVER_SSHKEY }}
-          script: cd /home/vue3.0-all &&  sh dockerBootstrap.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.SERVER_PASSWORD }}
+          script: cd /home/vue3.0-all && copy README.md ./  &&  sh dockerBootstrap.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.SERVER_PASSWORD }}
