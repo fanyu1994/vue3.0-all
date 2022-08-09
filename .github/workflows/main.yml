@@ -28,8 +28,8 @@ jobs:
           node-version: 14.19.1
       - name: npm i && build
         run: |
-          npm i
-          npm run build
+          pnpm i
+          pnpm build
         env:
           CI: true
       - name: SCP Files
@@ -43,7 +43,7 @@ jobs:
           username: "root"
           # target: ${{secrets.SERVER_TARGET}}
           target: "/home/vue3.0-all"
-          source: "pnpm-lock.yaml"
+          source: "dockerBootstrap.sh"
 
       # 登录阿里云镜像容器服务，打包镜像，推送镜像
       - name: Build the Docker image
