@@ -28,6 +28,7 @@ jobs:
           node-version: 14.19.1
       - name: npm i && build
         run: |
+          npm i pnpm -g
           pnpm i
           pnpm build
         env:
