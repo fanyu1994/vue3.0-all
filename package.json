@@ -14,6 +14,7 @@
     "@types/node-fetch": "^2.6.2",
     "axios": "^0.27.2",
     "jsdom": "^20.0.0",
+    "kokomi.js": "^1.9.36",
     "node-fetch": "^3.2.10",
     "pinia": "^2.0.17",
     "rollup-plugin-copy": "^3.4.0",

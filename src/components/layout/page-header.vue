@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const Route = useRoute()
 const Router = useRouter()
-const routerList = ref<any[]>([window.history.state.current])
+const routerList = reactive<any[]>([window.history.state.current])
 
 watch(
   () => {
@@ -14,11 +14,21 @@ watch(
     console.log(newVal)
 
     if (newVal > 1) {
-      routerList.value.push(window.history.state.current)
+      routerList.push(window.history.state.current)
     }
   }
 )
-
+watch(
+  () => {
+    return Route
+  },
+  () => {
+    console.log(Route.matched[0], routerList,'Route routerList')
+  },
+  {
+    deep: true,
+  }
+)
 function go(item: any) {
   Router.push(item.path)
 }
