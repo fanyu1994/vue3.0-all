@@ -15,7 +15,7 @@ import Foot from './components/layout/foot.vue'
       <page-header />
       <div id="container-main">
         <router-view v-slot="{ Component, route }">
-          <transition name="fade" mode="out-in">
+          <transition name="fade">
             <suspense>
               <template #default>
                 <component :is="Component" :key="route.path"></component>
