@@ -43,7 +43,7 @@ import Foot from './components/layout/foot.vue'
       box-sizing: border-box;
       height: calc(100vh - 134px - 2.5rem);
       padding: 10px;
-      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
     }
   }
 }
