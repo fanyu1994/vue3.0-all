@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "push": "git add . && git commit -m {c code} && git pull && git push"
+    "push": "git add . && git commit -m ccode && git pull && git push"
   },
   "dependencies": {
     "@types/node-fetch": "^2.6.2",
