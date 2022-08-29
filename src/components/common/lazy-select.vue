@@ -1,4 +1,4 @@
-
+<!-- 
 
 
 
@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<script>
+<script >
 import { throttle } from 'utils/fun'
 import { addStore } from 'api/market'
 
@@ -150,4 +150,4 @@ export default {
   },
 }
 </script>
-
+ -->
