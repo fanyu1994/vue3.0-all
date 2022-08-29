@@ -5,7 +5,6 @@ import './style/index.less'
 import 'uno.css'
 import { createPinia } from 'pinia'
 import Router from './route'
-
 // import { mocker } from './mock/index'
 // console.log(import.meta.env)
 

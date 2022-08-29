@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Foot: typeof import('./src/components/layout/foot.vue')['default']
     Head: typeof import('./src/components/layout/head.vue')['default']
+    LazySelect: typeof import('./src/components/common/lazy-select.vue')['default']
     PageHeader: typeof import('./src/components/layout/page-header.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
