@@ -1,0 +1,10 @@
+version: "3"
+services:
+  pure-nginx:
+    image: nginx:latest
+    container_name: vue3.0_all
+    restart: always
+    volumns:
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - "4397:82"
